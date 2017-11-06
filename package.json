@@ -5,13 +5,14 @@
   "author": "Micah Bales <micahbales@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "concurrently \"node build/dev-server.js\" \"node giphy-server/giphy-server.js\"",
     "start": "npm run dev",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "concurrently": "^3.5.0",
     "vue": "^2.5.2"
   },
   "devDependencies": {
