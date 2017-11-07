@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
+const serveStatic = require('serve-static');
 
 require('dotenv').config();
 
@@ -12,9 +13,13 @@ require('dotenv').config();
                                       */
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers",
+  "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+/* Serve static assets from dist in production */
+app.use(serveStatic(__dirname + "/dist"));
 
 /*
    Query the Giphy API server-side,
@@ -36,6 +41,6 @@ app.get('/api/v1/giphy', async (req, res) => {
   } catch(err) { console.error(err); }
 });
 
-app.listen(3000, () => {
-  console.log('Express Server Ready to Serve Up Giphy Magic on Port 3000!')
+app.listen(process.env.PORT || 8080, () => {
+  console.log('Express Server Ready to Serve Up Giphy Magic!')
 });

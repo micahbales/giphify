@@ -27,8 +27,7 @@ export default {
   methods: {
     searchGiphy(e) {
       e.preventDefault();
-      this.$http.get('http://localhost:3000' +
-        `/api/v1/giphy?search=${this.searchString}`)
+      this.$http.get(`/api/v1/giphy?search=${this.searchString}`)
       .then((res) => {
         res.body.data.map(gif => this.gifs.push(gif));
       }, (err) => {
