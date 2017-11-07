@@ -5,6 +5,18 @@ const axios = require('axios');
 require('dotenv').config();
 
 /*
+  Allow CORS requests from any domain
+  This permits our Vue front end to
+  query our Express server and receive
+  back the data it needs
+                                      */
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+/*
    Query the Giphy API server-side,
    to avoid exposing credentials
    Return results to our Vue front end
@@ -12,7 +24,7 @@ require('dotenv').config();
 app.get('/api/v1/giphy', async (req, res) => {
   try {
     const gifs = await axios.get(
-      `http://api.giphy.com/v1/gifs/search` +
+      `https://api.giphy.com/v1/gifs/search` +
       `?api_key=${process.env.GIPHY_API_KEY}` +
       `&q=${req.query.search || ''}` +
       `&limit=3` +
