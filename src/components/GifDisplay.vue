@@ -13,11 +13,21 @@
 </script>
 
 <style scoped>
+img {
+  max-width: 320px;
+}
+
 .center-block {
   float: none;
 }
 
 .gif {
   padding: 15px 0px;
+}
+
+@media (min-width: 500px) {
+  img {
+    max-width: 500px;
+  }
 }
 </style>

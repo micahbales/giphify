@@ -52,7 +52,7 @@
     border-radius: 1px;
     background: #85c578;
     height: 40px;
-    width: 200px;
+    width: 55%;
   }
 
   #app {
@@ -65,24 +65,42 @@
   }
 
   .logo img {
-    height: 150px;
+    width: 55%;
   }
 
   .search-form {
     padding: 20px 0px;
-    transform: translateX(.6%);
+    transform: translateX(1%);
   }
 
   .btn--search {
     background-color: #ef676a;
     border-radius: 1px;
     height: 30px;
-    width: 200px;
+    width: 55%;
   }
 
-  h2.search-string {
-    max-width: 320px;
-    margin: 0 auto;
-    float: none;
+  @media(min-width: 500px) {
+    .logo img, input[type=text], .btn--search  {
+      width: 40%;
+    }
+  }
+
+  @media(min-width: 750px) {
+    .logo img, input[type=text], .btn--search  {
+      width: 35%;
+    }
+  }
+
+  @media(min-width: 970px) {
+    .logo img, input[type=text], .btn--search {
+      width: 30%;
+    }
+  }
+
+  @media(min-width: 1170px) {
+    .logo img, input[type=text], .btn--search {
+      width: 25%;
+    }
   }
 </style>
