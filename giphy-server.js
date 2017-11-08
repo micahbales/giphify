@@ -32,19 +32,19 @@ app.get('/api/v1/giphy', async (req, res) => {
       `https://api.giphy.com/v1/gifs/search` +
       `?api_key=${process.env.GIPHY_API_KEY}` +
       `&q=${req.query.search || ''}` +
-      `&limit=3` +
+      `&limit=4` +
       `&rating=pg`)
     .then((res) => { return res.data });
 
-    /* We always want to get back at least 3 gifs for every search
+    /* We always want to get back at least 4 gifs for every search
        Check and see if we have at least three gifs; if not, query
        Giphy's trending API and return enough to fill out the results
                                                                       */
-    if (gifs.data.length < 3) {
+    if (gifs.data.length < 4) {
       let moreGifs = await axios.get(
         `https://api.giphy.com/v1/gifs/trending` +
         `?api_key=${process.env.GIPHY_API_KEY}` +
-        `&limit=${3 - gifs.data.length}` +
+        `&limit=${4 - gifs.data.length}` +
         `&rating=pg` +
         `&offset=${Math.floor(Math.random() * 50) + 1}`)
       .then((res) => { return res.data });

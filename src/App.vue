@@ -80,25 +80,25 @@
     width: 55%;
   }
 
-  @media(min-width: 500px) {
+  @media (min-width: 500px) {
     .logo img, input[type=text], .btn--search  {
       width: 40%;
     }
   }
 
-  @media(min-width: 750px) {
+  @media (min-width: 750px) {
     .logo img, input[type=text], .btn--search  {
       width: 35%;
     }
   }
 
-  @media(min-width: 970px) {
+  @media (min-width: 970px) {
     .logo img, input[type=text], .btn--search {
       width: 30%;
     }
   }
 
-  @media(min-width: 1170px) {
+  @media (min-width: 1170px) {
     .logo img, input[type=text], .btn--search {
       width: 25%;
     }
