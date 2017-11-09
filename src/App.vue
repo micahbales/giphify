@@ -42,9 +42,9 @@
 </script>
 
 <style>
-  body {
-    background-color: #2c3e50!important; /* overriding bootstrap */
-  }
+  * { transition: background-color, color .2s ease-in }
+
+  body { background-color: #2c3e50!important; /* overriding bootstrap */ }
 
   input[type=text] {
     text-align: center;
@@ -64,9 +64,7 @@
     margin-top: 60px;
   }
 
-  .logo img {
-    width: 55%;
-  }
+  .logo img { width: 55%; }
 
   .search-form {
     padding: 20px 0px;
@@ -78,29 +76,27 @@
     border-radius: 1px;
     height: 30px;
     width: 55%;
+    font-weight: bold;
+  }
+
+  .btn--search:hover {
+    background-color: #A967F0;
+    color: #fefefe;
   }
 
   @media (min-width: 500px) {
-    .logo img, input[type=text], .btn--search  {
-      width: 40%;
-    }
+    .logo img, input[type=text], .btn--search { width: 40%; }
   }
 
   @media (min-width: 750px) {
-    .logo img, input[type=text], .btn--search  {
-      width: 35%;
-    }
+    .logo img, input[type=text], .btn--search { width: 35%; }
   }
 
   @media (min-width: 970px) {
-    .logo img, input[type=text], .btn--search {
-      width: 30%;
-    }
+    .logo img, input[type=text], .btn--search { width: 30%; }
   }
 
   @media (min-width: 1170px) {
-    .logo img, input[type=text], .btn--search {
-      width: 25%;
-    }
+    .logo img, input[type=text], .btn--search { width: 25%; }
   }
 </style>
