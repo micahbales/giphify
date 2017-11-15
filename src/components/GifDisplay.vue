@@ -14,16 +14,18 @@
   };
 </script>
 
-<style scoped>
-img {
-  max-width: 95%;
-  max-height: 200px;
-  border: 2px solid #fefefe;
-  border-radius: 2px;
-}
+<style lang="scss" scoped>
+  @import '../assets/styles/_vars.scss';
 
-.gif {
-  padding: 20px;
-  min-height: 250px;
-}
+  img {
+    max-width: 95%;
+    max-height: 200px;
+    border: 2px solid $white;
+    border-radius: 2px;
+  }
+
+  .gif {
+    padding: 20px;
+    min-height: 250px;
+  }
 </style>

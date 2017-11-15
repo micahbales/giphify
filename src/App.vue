@@ -41,16 +41,18 @@
   };
 </script>
 
-<style>
+<style lang="scss">
+  @import './assets/styles/_vars.scss';
+
   * { transition: background-color, color .2s ease-in }
 
-  body { background-color: #2c3e50!important; /* overriding bootstrap */ }
+  body { background-color: $navy!important; /* overriding bootstrap */ }
 
   input[type=text] {
     text-align: center;
-    border: 2px solid #fefefe;
+    border: 2px solid $white;
     border-radius: 1px;
-    background: #85c578;
+    background: $green;
     height: 40px;
     width: 55%;
   }
@@ -60,7 +62,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #fefefe;
+    color: $white;
     margin-top: 60px;
   }
 
@@ -72,16 +74,16 @@
   }
 
   .btn--search {
-    background-color: #ef676a;
+    background-color: $orange;
     border-radius: 1px;
     height: 30px;
     width: 55%;
     font-weight: bold;
-  }
 
-  .btn--search:hover {
-    background-color: #A967F0;
-    color: #fefefe;
+    &:hover {
+      background-color: $purple;
+      color: $white;
+    }
   }
 
   @media (min-width: 500px) {
